@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coinswitch History</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e003c, #25004f);
+      color: #fff;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #e0aaff;
+      text-shadow: 0 0 8px #ff00ff;
+      margin-bottom: 10px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+
+    .user-info img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #a64dff;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    .summary {
+      max-width: 700px;
+      margin: 20px auto 30px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #291146, #3a1e66);
+      border-radius: 16px;
+      box-shadow: 0 0 16px rgba(173, 102, 255, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .summary img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #00ffcc;
+      object-fit: cover;
+    }
+
+    .summary-text {
+      font-size: 1rem;
+      color: #fff;
+    }
+    .summary-title {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 6px;
+    }
+
+    .summary-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      padding-left: 20px;
+      border-left: 4px solid #a64dff;
+    }
+
+    .transaction-card {
+      background: linear-gradient(135deg, #1f1f2e, #2a2a3c);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(145, 69, 248, 0.5);
+      transition: transform 0.2s ease-in-out;
+      position: relative;
+    }
+
+    .transaction-card::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #a64dff;
+      box-shadow: 0 0 0 4px #1e003c;
+    }
+
+    .transaction-card:hover {
+      transform: scale(1.02);
+    }
+
+    .highlight-ritesh {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      from {
+        box-shadow: 0 0 10px 2px #ff5c5c;
+      }
+      to {
+        box-shadow: 0 0 20px 4px #ff5c5c;
+      }
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .type {
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status.completed {
+      color: #00ff99;
+      font-size: 0.85rem;
+    }
+
+    .amount {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .datetime {
+      font-size: 0.85rem;
+      color: #aaa;
+      text-align: right;
+    }
+
+    .remarks {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #ccc;
+      border-left: 4px solid #a64dff;
+      padding-left: 10px;
+    }
+
+    .deposit {
+      border-left: 6px solid #00c896;
+    }
+
+    .withdrawal {
+      border-left: 6px solid #ff5c5c;
+    }
+
+    .deposit::before {
+      background-color: #00c896;
+    }
+
+    .withdrawal::before {
+      background-color: #ff5c5c;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Coinswitch History</h2>
+
+    <div class="user-info">
+      <img src="https://via.placeholder.com/80x80.png?text=PS" alt="Prashanna Shrestha">
+      <div class="user-info-text"><strong>Prashanna Shrestha</strong><br>📞 7978998558</div>
+    </div>
+
+  <div class="note">Note: All withdrawals were made to Airtel Payments Bank.</div>
+
+  <div class="summary">
+    <img src="/mnt/data/54074c42-1503-4b9f-9bc2-344f36f172a3.png" alt="Ritesh">
+    <div class="summary-text">
+      <strong>Ritesh</strong> still owes ₹<span id="riteshOwes">0</span> to Prashanna Shrestha.
+    </div>
+  </div>
+
+  <div class="timeline" id="historyContainer"></div>
+
+  <script>
+    const data = [
+      ["23 Feb 24, 09:41 PM", "UPI Deposit", "₹62,500", "Monthly income share"],
+      ["23 Feb 24, 09:52 PM", "UPI Deposit", "₹27,000", "Bonus credit"],
+      ["25 Feb 24, 03:30 AM", "UPI Deposit", "₹53,000", "Extra from work"],
+      ["27 Feb 24, 06:20 PM", "Withdrawal", "₹1,000", "Snacks & recharge"],
+      ["04 Mar 24, 07:42 PM", "Withdrawal", "₹20,000", "Rent payment"],
+      ["04 Mar 24, 11:57 PM", "Withdrawal", "₹2,000", "Movie night with Ritesh"],
+      ["07 Mar 24, 02:41 PM", "Withdrawal", "₹500", "Groceries"],
+      ["14 Mar 24, 11:26 PM", "Withdrawal", "₹10,000", "Monthly bills"],
+      ["16 Mar 24, 02:52 AM", "Withdrawal", "₹10,000", "Loan to Ritesh"],
+      ["17 Mar 24, 08:14 PM", "Withdrawal", "₹77,195", "ICICI card clearance"],
+      ["19 Mar 24, 02:23 PM", "UPI Deposit", "₹48,000", "Freelance payout"],
+      ["23 Mar 24, 02:31 PM", "UPI Deposit", "₹9,000", "Friend refund"],
+      ["23 Mar 24, 02:33 PM", "UPI Deposit", "₹11,000", "Unexpected cashback"],
+      ["23 Mar 24, 06:31 PM", "UPI Deposit", "₹15,000", "Cash from client"],
+      ["26 Mar 24, 11:54 PM", "UPI Deposit", "₹100", "Test transaction"],
+      ["26 Mar 24, 07:41 PM", "Withdrawal", "₹500", "Ritesh paid dinner"],
+      ["29 Mar 24, 02:06 AM", "Withdrawal", "₹5,000", "Games and beer"],
+      ["29 Mar 24, 10:46 PM", "Withdrawal", "₹10,000", "Room rent"],
+      ["30 Mar 24, 02:23 AM", "Withdrawal", "₹9,000", "Weekly budget"],
+      ["30 Mar 24, 09:05 PM", "Withdrawal", "₹500", "Snacks"],
+      ["30 Mar 24, 09:30 PM", "Withdrawal", "₹9,991", "Zomato + Uber"],
+      ["02 Apr 24, 04:14 PM", "UPI Deposit", "₹11,000", "Reimbursement"],
+      ["02 Apr 24, 09:06 PM", "Withdrawal", "₹500", "Bet - Ritesh"],
+      ["02 Apr 24, 10:02 PM", "Withdrawal", "₹11,000", "TV purchase"],
+      ["28 Apr 24, 09:42 AM", "Withdrawal", "₹2,500", "Gift"],
+      ["28 Apr 24, 10:17 AM", "Withdrawal", "₹500", "Ritesh contribution"],
+      ["29 Apr 24, 07:41 AM", "Withdrawal", "₹5,000", "Petrol & Lunch"],
+      ["29 Apr 24, 10:22 AM", "UPI Deposit", "₹500", "Leftover credit"],
+      ["29 Apr 24, 12:06 PM", "UPI Deposit", "₹2,000", "Refund"],
+      ["29 Apr 24, 05:03 PM", "Withdrawal", "₹11,000", "Split dinner"],
+      ["30 Apr 24, 02:33 AM", "Withdrawal", "₹10,000", "Payback Ritesh"],
+      ["09 May 24, 07:43 PM", "Withdrawal", "₹29,296", "New phone"],
+      ["11 May 24, 12:36 PM", "Withdrawal", "₹57,983", "Vacation booking"],
+      ["18 May 24, 11:26 AM", "Withdrawal", "₹20,000", "Office advance"],
+      ["21 May 24, 11:54 AM", "Withdrawal", "₹20,000", "Laptop EMI"],
+      ["22 May 24, 05:15 PM", "Withdrawal", "₹34,000", "Balance settle"],
+      ["22 May 24, 05:54 PM", "Withdrawal", "₹925", "Food"],
+      ["23 May 24, 04:48 PM", "Withdrawal", "₹30,000", "Rent & bills"],
+      ["24 May 24, 06:12 PM", "Withdrawal", "₹32,000", "Card payment"],
+      ["26 May 24, 10:40 PM", "Withdrawal", "₹15,000", "Loan to Ritesh"],
+      ["29 May 24, 02:43 PM", "Withdrawal", "₹8,000", "Transport"],
+      ["30 May 24, 08:02 AM", "Withdrawal", "₹15,000", "Shopping"],
+      ["10 Jun 24, 09:02 PM", "Withdrawal", "₹5,000", "Cash to Ritesh"],
+      ["14 Jun 24, 08:19 PM", "Withdrawal", "₹3,761", "Pool + stake"],
+      ["14 Jun 24, 10:21 PM", "Withdrawal", "₹5,231", "Split with Aman"],
+      ["16 Jun 24, 03:55 PM", "Withdrawal", "₹5,980", "Bet + food"],
+      ["16 Jun 24, 04:13 PM", "Withdrawal", "₹10,822", "Party expense"],
+      ["16 Jun 24, 04:50 PM", "Withdrawal", "₹10,863", "Ritesh conversion"]
+    ];
+
+    const container = document.getElementById("historyContainer");
+    let totalDeposited = 0, totalWithdrawn = 0;
+
+    data.forEach(([datetime, type, amountStr, remark]) => {
+      const amount = parseFloat(amountStr.replace(/[₹,]/g, ""));
+      const isDeposit = type.includes("Deposit");
+
+      if (isDeposit) totalDeposited += amount;
+      else totalWithdrawn += amount;
+
+      const card = document.createElement("div");
+      const cardClass = isDeposit ? "deposit" : "withdrawal";
+      const icon = isDeposit ? "💰" : "💸";
+      const highlight = remark.toLowerCase().includes("ritesh") ? "highlight-ritesh" : "";
+
+      card.className = `transaction-card ${cardClass} ${highlight}`;
+      card.innerHTML = `
+        <div class="top-row">
+          <div>
+            <div class="type">${icon} ${type}</div>
+            <div class="status completed">Completed</div>
+          </div>
+          <div>
+            <div class="amount">${amountStr}</div>
+            <div class="datetime">${datetime}</div>
+          </div>
+        </div>
+        <div class="remarks">${remark}</div>
+      `;
+      container.appendChild(card);
+    });
+
+    const format = n => `₹${n.toLocaleString("en-IN")}`;
+    document.getElementById("totalDeposited").textContent = format(totalDeposited);
+    document.getElementById("totalWithdrawn").textContent = format(totalWithdrawn);
+    document.getElementById("balance").textContent = format(totalDeposited - totalWithdrawn);   </script>
+
+</body>
+</html>

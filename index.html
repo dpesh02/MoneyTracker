@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of People Who Owe Money</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+      /*   background: linear-gradient(to right, #1e003c, #25004f); */
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/* ----------------------------------------------   FLEX CARD 3 : --------------------------------------------------------- */
+/* --------------------------   PRABHU BANK IMAGES STATEMENT Month , Gallery and Item ------------------------------------- */
+
+    /* Statement Gallery */
+.statement-gallery {
+  display: flex;
+  flex-direction: column;
+
+  /* Removed grid-template-columns since flexbox is used */
+  gap: 20px;
+  margin: 30px auto;
+  padding: 30px;
+
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.05); /* semi-transparent */
+  backdrop-filter: blur(10px); /* blur for glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.6),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.05),
+              0 4px 30px rgba(0, 0, 0, 0.4); /* added outer glow for depth */
+
+  width: fit-content;
+}
+
+
+    .statement-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .statement-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+    }
+
+    .statement-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .statement-month {
+        text-align: center;
+        margin: 30px 0 10px;
+        font-size: 1.8rem;
+        color: var(--accent-success);
+        position: relative;
+    }
+
+    .statement-month:after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: var(--accent-success);
+        margin: 10px auto;
+        border-radius: 3px;
+    }
+
+/* --------------------------------------------  PRABHU BANK PROGRESS BAR ------------------------------------------------------ */
+    /* Progress Indicator */
+    .progress-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+    }
+
+    .progress-text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+
+    .progress-bar {
+        height: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent-success), var(--accent-info));
+        border-radius: 5px;
+        transition: width 0.5s ease;
+    }
+
+/* ------    FLEX CARD 3 :  PRABHU BANK IMAGES STATEMENT Month , Gallery and Item ---------- */
+
+
+
+.event-summary {
+  max-width: 700px;
+  margin: 40px auto 20px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e003c, #25004f);
+  border-radius: 16px;
+  box-shadow: 0 0 16px rgba(160, 32, 240, 0.6);
+  color: #fff;
+}
+
+.event-summary h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #ffccff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #a020f0;
+}
+
+#summary-text {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #a020f0;
+  background: #2a2a3c;
+  color: #fff;
+  font-size: 1rem;
+  resize: vertical;
+  box-shadow: 0 0 6px rgba(160, 32, 240, 0.4);
+}
+/* ---------------- */
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #000; /* black text */
+  text-decoration: underline; /* underline added */
+  text-decoration-color: #a020f0; /* purple underline */
+  text-shadow:
+    0 0 5px #a020f0,
+    0 0 10px #a020f0,
+    0 0 20px #a020f0,
+    0 0 40px #a020f0; /* purple glow */
+  margin-bottom: 10px;
+}
+
+/* Style for coinswitch */
+.custom {
+  background: linear-gradient(to right, #1e003c, #25004f) !important;
+  color: white; /* optional, helps text pop on dark bg */
+
+}
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+
+    .user-info img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #a64dff;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+
+.remarks {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05); /* semi-transparent white for glossy effect */
+  backdrop-filter: blur(10px); /* blur for glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  text-shadow: 1px 1px 1px #000, -1px -1px 1px #333;
+  width: fit-content;
+  margin: 10px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+}
+
+
+
+
+
+.note_1 {
+  position: relative;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 20px 0;
+  padding-left: 25px;
+  border-left: 2px solid #ccc;
+}
+
+.note_1::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+
+    .summary {
+      max-width: 700px;
+      margin: 20px auto 30px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #291146, #3a1e66);
+      border-radius: 16px;
+      box-shadow: 0 0 16px rgba(173, 102, 255, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .summary img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20%;
+      border: 2px solid #00ffcc;
+      object-fit: cover;
+    }
+
+    .summary-text {
+      font-size: 1rem;
+      color: #fff;
+    }
+    .summary-title {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 6px;
+    }
+
+    .summary-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      padding-left: 20px;
+      border-left: 4px solid #a64dff;
+    }
+
+    .transaction-card {
+      background: linear-gradient(135deg, #1f1f2e, #2a2a3c);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(145, 69, 248, 0.5);
+      transition: transform 0.2s ease-in-out;
+      position: relative;
+    }
+
+    .transaction-card::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #a64dff;
+      box-shadow: 0 0 0 4px #1e003c;
+    }
+
+    .transaction-card:hover {
+      transform: scale(1.02);
+    }
+
+    .highlight-ritesh {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      from {
+        box-shadow: 0 0 10px 2px #ff5c5c;
+      }
+      to {
+        box-shadow: 0 0 20px 4px #ff5c5c;
+      }
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .type {
+      font-size: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status.completed {
+      color: #00ff99;
+      font-size: 0.85rem;
+    }
+
+    .amount {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .datetime {
+      font-size: 0.85rem;
+      color: #aaa;
+      text-align: right;
+    }
+
+    .remarks {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #ccc;
+      border-left: 4px solid #a64dff;
+      padding-left: 10px;
+    }
+
+    .deposit {
+      border-left: 6px solid #00c896;
+    }
+
+    .withdrawal {
+      border-left: 6px solid #ff5c5c;
+    }
+
+    .deposit::before {
+      background-color: #00c896;
+    }
+
+    .withdrawal::before {
+      background-color: #ff5c5c;
+    }
+/*  ----------------------------------- Wrapper Class CSS ---------------------------------------------  */
+.wrapper {
+    display: flex;
+    flex-direction: row;  /* Display cards horizontally */
+    gap: 0;
+    width: 100vw;  /* Wrapper takes full screen width */
+    height: 100vh;  /* Wrapper takes full screen height */
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    overflow-y: hidden;  /* Prevent vertical scrolling inside the wrapper */
+    scroll-snap-type: x mandatory;  /* Ensure the cards snap to the start */
+    position: relative;
+}
+
+/*   ----------------------------------- Card Class CSS ---------------------------------------------  */
+.card {
+    box-sizing: border-box;
+    padding: 15px;   
+    width: 100vw;  /* Each card takes up the full viewport width */
+    height: 100vh;  /* Each card takes up the full viewport height */
+    background: rgba(255, 255, 255, 0.1);  /* Slightly transparent background for neon effect */
+    border-radius: 15px;
+box-shadow: 0 10px 30px rgba(128, 0, 128, 0.7), 0 0 20px 5px rgba(128, 0, 128, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;  /* Make sure each card snaps to the start */
+    flex-shrink: 0;  /* Prevent the cards from shrinking */
+    border: 2px solid rgba(0, 255, 255, 0.5); /* Neon border effect */
+}
+
+.card h1, .card p {
+text-shadow: 0 0 10px rgba(128, 0, 128, 0.9), 0 0 20px rgba(128, 0, 128, 0.6);
+}
+
+/*  ----------------------------------- Container Class CSS ---------------------------------------------  */
+.container {
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 1000px;     /* Important */
+    width: 100%;
+    margin: 20px;
+    padding: 20px;  /* 30 px */
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow-y: auto;  /* Allow vertical scrolling inside the card */
+    height: 100%;  /* Ensure it takes full height */
+}
+
+
+.special_container {
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 1000px;     /* Important */
+    width: 100%;
+    margin: 20px;
+    padding: 20px;  /* 30 px */
+   background: linear-gradient(to right, #1e003c, #25004f) !important;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow-y: auto;  /* Allow vertical scrolling inside the card */
+    height: 100%;  /* Ensure it takes full height */
+}
+
+/*  ----------------------------------- Download Button ---------------------------------------------  */
+
+
+.download-btn {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px 28px;
+    color: #fff;
+    background: #000;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    text-shadow: none;
+    box-shadow: 0 0 12px #8a2be2, 0 0 20px #8a2be2;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: conic-gradient(
+        from 0deg,
+        #8a2be2 0deg,
+        #9b30ff 90deg,
+        #8a2be2 180deg,
+        #9b30ff 270deg,
+        #8a2be2 360deg
+    );
+    border-radius: 12px;
+    animation: rotateGlow 2s linear infinite;
+    z-index: -1;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #8a2be2, 0 0 50px #9b30ff, 0 0 75px #8a2be2;
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+  .custom-table {
+    margin: 40px auto; /* Center horizontally */
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    min-width: 300px;
+    background: #1a1a2e;
+    color: #fff;
+    box-shadow: 0 0 15px #8a2be2;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .custom-table th, .custom-table td {
+    border: 1px solid #9b30ff;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .custom-table th {
+    background-color: #2e003e;
+    color: #ffccff;
+  }
+
+  .custom-table tr:nth-child(even) {
+    background-color: #2a2a40;
+  }
+
+  .custom-table tr:hover {
+    background-color: #3a004c;
+    color: #fff;
+  }
+
+/* ---------------------------------------- NEON TEXT -------------------------------------------------- */
+
+.neon-text {
+  text-align: center;
+  font-size: 18px;
+  color: #ffccff;
+  font-weight: bold;
+  margin-top: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #8a2be2, 0 0 30px #9b30ff;
+  border: 1px solid #9b30ff;
+  display: inline-block;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+   
+        /* Header Styles */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #fff;
+            margin: 15px 0;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+/* --------------------------------  Red Text Bold ------------------------------------------------- */
+.red_text {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.2em;
+
+}
+
+/* ------------------------------ Red Text with Box ------------------------------------------------ */
+.red_boxtext {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.2em;
+    border: 2px solid #e74c3c;  /* Added border */
+    padding: 5px;               /* Added padding for spacing */
+    border-radius: 4px;         /* Slightly rounded corners */
+}
+
+       
+
+ /*---------------------- Name Class (Black , Pulse , Bold )---------------------------------------------- */
+/* Names of Person */
+.name {
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/*---OLD STYLE-----*/
+
+.old_amount{
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.3);
+    position: relative;
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.old_amount::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+    opacity: 0.6;
+}
+
+
+.old_amount:hover {
+    color: #c0392b;
+    transform: scale(1.05) rotate(-2deg);
+    text-shadow: 3px 3px 6px rgba(192, 57, 43, 0.4);
+    cursor: pointer;
+}
+
+ /*--------------------------------------------------------------------------*/
+
+
+
+        /* Countdown Timer Styles */
+
+     
+        .countdown {
+            display: flex;
+            gap: 10px;
+            margin-left: 10px;
+        }
+
+        .countdown div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            perspective: 1000px;
+        }
+
+        .countdown div small {
+            font-size: 0.8em;
+            color: #ddd;
+        }
+
+        /* Total Sum Styles */
+        #total-sum {
+            text-align: right;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            animation: slideIn 0.3s ease;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .popup h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        .popup p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            li {
+                flex-direction: column;
+                text-align: center;
+            }
+            .amount {
+                margin-top: 10px;
+            }
+            .popup {
+                width: 90%;
+                right: 5%;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50%) translateX(20px); }
+            to { opacity: 1; transform: translateY(-50%) translateX(0); }
+        }
+
+        /* Add Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+
+img {
+    width: 10000000px; /* Fixed width */
+    max-width: 100%; /* Ensures the image doesn't overflow on smaller screens */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes extra space below the image */
+    margin: 10px auto; /* Centers the image horizontally and adds vertical spacing */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper"> 
+
+ <!--  ------------------------------------------------Flex Card 1 --------------------------------------------------------------------- -->
+<div class="card">
+           <div class="container">
+        <h1>List of People Who Owe Money</h1>
+        <input type="text" id="search" placeholder="Search for a name..." style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em;">
+
+
+        <ul>
+
+            <li data-details="Ritesh Kumar Chauhan" data-image="friends/Ritesh.png" data-amount="Rs. TRANSFERRED TO AMAN " data-date="2025-03-10" data-notes="Old : 350 + Rs.100 * 3 (Cash)+ Rs.200 * 2 (Cash) + 3400 Cash, 350 Aman + 250 Aman ( Total : 5050 ) TRANSFERRED TO AMAN" data-cash=" 9,000 Nc Cash @cyclone home (Townhall -> LAPTOP SELL but I saved)+ 14,000 Nc Cash (ABC TRIP) Finally Laptop SOLD (32,000 Inr Stake Dadi Loss)" data-extra="1230 INR (Rohan 5k Sony D) + 800 INR (HARIOM ESEWA STAKE LOSS) + 1000 INR (Sujit -> Ritesh Hospital) + 4000 INR (Old Sonu Cash ,Bike Deal) + 6510 INR (Cyclone AVINASH+RITESH+ME)">
+                <span class="name">Ritesh Chauhan</span>
+                <span class="red_boxtext">IC 4,87,931<br></span>
+                <div class="countdown">
+                    <div><span id="days1">00</span><small>Days</small></div>
+                    <div><span id="hours1">00</span><small>Hours</small></div>
+                    <div><span id="minutes1">00</span><small>Minutes</small></div>
+                    <div><span id="seconds1">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+
+            <li data-details="Abhinav Aman" data-image="friends/Aman.png" data-amount="9,450 INR" data-date="2025-03-12" data-notes="ATM CASH DEPOSIT , TOTAL : RS. 5000 , -350 RITESH FOOD  , -250 RITESH FOOD , -900 [Stake deposit 500 + 400 Food ] - [4400] - (-2500 ritesh stake loss) 1900@OLD + [5050] @Ritesh Total : 9,450 INR " data-extra="4400(-2500 Ritesh Stake loss -1250 -900 bet ) -250 LEFT+ 500 STAKE BET LEFT (ANMOL , SAR) + 5050 INR LEFT (-240 Biryani Aman/Me  - 50 Kela - (160+50)Reimbriusemnet Party (ritesh,me,aman))">
+                <span class="name">Abhinav Aman</span>
+                <span class="red_boxtext">IC 3,600</span>
+                <div class="countdown">
+                    <div><span id="days2">00</span><small>Days</small></div>
+                    <div><span id="hours2">00</span><small>Hours</small></div>
+                    <div><span id="minutes2">00</span><small>Minutes</small></div>
+                    <div><span id="seconds2">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+
+
+            
+            <li data-details="Anmol Mishra" data-image="friends/Anmol.png" data-amount="1,840 INR" data-date="2025-03-06" data-notes=" FOOD : 500 *2 , Dipesh : 340 + ATM left : 200 + 300 AVINASH">
+                <span class="name">Anmol Mishra</span>
+                <span class="red_boxtext">1,840 INR (NEW)</span>
+                <div class="countdown">
+                    <div><span id="days3">00</span><small>Days</small></div>
+                    <div><span id="hours3">00</span><small>Hours</small></div>
+                    <div><span id="minutes3">00</span><small>Minutes</small></div>
+                    <div><span id="seconds3">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+
+                    <li data-details="Pankaj Kumar Gupta" data-image="friends/Pankaj.png" data-amount="17,000 INR" data-date="2024-03-04" data-notes="Credit Card , Total : 20,000 ">
+                <span class="name">Pankaj Gupta</span>
+                <span class="red_boxtext">17,000 INR (Old)</span>
+                <div class="countdown">
+                    <div><span id="days4">00</span><small>Days</small></div>
+                    <div><span id="hours4">00</span><small>Hours</small></div>
+                    <div><span id="minutes4">00</span><small>Minutes</small></div>
+                    <div><span id="seconds4">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+
+            <li data-details="Bibek Yadav" data-image="friends/Bibek.png" data-amount="4,900 INR" data-date="2023-08-20" data-notes="Iphone Loan , Total : 5500">
+                <span class="name">Bibek Yadav</span>
+                <span class="red_boxtext">4,900 INR (Old)</span>
+                <div class="countdown">
+                    <div><span id="days5">00</span><small>Days</small></div>
+                    <div><span id="hours5">00</span><small>Hours</small></div>
+                    <div><span id="minutes5">00</span><small>Minutes</small></div>
+                    <div><span id="seconds5">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+
+            <li data-details="Avinash Khatri" data-image="https://via.placeholder.com/300" data-amount="2,300 INR" data-date="2023-05-01" data-notes="Forex , Total : 6300   (4000 CASH ME -> ANIKET) + 300 (ANMOL GPAY)">
+                <span class="name">Avinash Khatri</span>
+                <span class="red_boxtext">2,000 INR (OLD)</span>
+                <div class="countdown">
+                    <div><span id="days6">00</span><small>Days</small></div>
+                    <div><span id="hours6">00</span><small>Hours</small></div>
+                    <div><span id="minutes6">00</span><small>Minutes</small></div>
+                    <div><span id="seconds6">00</span><small>Seconds</small></div>
+                </div>
+            </li>
+        </ul>
+
+        <p id="total-sum"></p>
+        <footer>
+            <p id="last-updated"></p>
+        </footer>
+       </div>
+    </div>
+ <!--  ------------------------------------------------Flex Card 2 --------------------------------------------------------------------- -->
+    <div class="card">
+    <div class="container">
+          <h1>Latest Record Urgent Pay</h1>
+          <span class="name">1. Rohit Bank Deposit : </span> 
+          <span  class="old_amount">IC 2,700 </span>
+          <br>
+        <p class="neon-text">Note : Gave 2700 to Ritesh  Cash</p>
+  <table  class="custom-table">
+  <thead>
+    <tr>
+      <th>Name & Type</th>
+      <th>Amount</th>
+      <th>Mode</th>
+      <th>Status</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hari Sah </td>
+      <td>1000 (IC)</td>
+      <td>Gpay</td>
+      <td>Ritesh Pending</td>
+
+
+    </tr>
+    <tr>
+      <td>Prajwal Panth </td>
+      <td>500 (IC) </td>
+      <td>Gpay</td>
+      <td>Ritesh Pending</td>
+
+    </tr>
+    <tr>
+      <td>Aman Karn </td>
+      <td>1200 (IC) </td>
+      <td>Cash</td>
+      <td>Ritesh Pending</td>
+    </tr>
+
+
+    <tr>
+      <td>Total  </td>
+      <td>2,700 (IC) </td>
+      <td></td>
+      <td>Ritesh Pending</td>
+    </tr>
+  </tbody>
+</table>
+          <span class="name">2. Surya Prakash Shah : </span> 
+          <span  class="old_amount">IC 260 </span>
+          <br>
+          <p class="neon-text">Note : Ritesh whatsapp Surya  260 ic -> 400 NC Pending </p> <br>
+
+          <span class="name">3. Reimbruisement Form : </span> 
+          <span  class="old_amount">10,500 </span> <br>
+          <p class="neon-text">Note : Ritesh played Stake (Ritesh541)</p> <br>
+
+          <span class="name">4. Kims Convert (16k nc home) : </span>
+          <span  class="old_amount">IC 10,000 </span>
+          <p class="neon-text">Remarks : Home KIMS CONVERT Ritesh played Stake (Ritesh541) </p><br>
+
+          <span class="name">5. Kims Convert (8k nc home) : </span>
+          <span  class="old_amount">IC 5,000 </span>
+<div class="event-summary">
+  <h2>Summary</h2>
+Ritesh had 5000 Initially.<br>
+<span class="note_1"> Sent -2000 To Avinash Prasad Kurmi </span><br> 
+<span class="note_1"> I sent him +1000 from Prajwal Panth</span><br> 
+<span class="note_1"> Ritesh gave me -1000 Cash in Room </span><br> 
+<span class="note_1"> I used his Gpay -700 (Rohit Sharma)</span><br> 
+
+<h5> Ritesh Kumar Chauhan : 2,300 To collect</h5> 
+<h5> Avinash Kurmi : 1,500 To collect (Sent 500) </h5>
+<span class="note_1"> +2000 Received from Ritesh Chauhan</span><br> 
+<span class="note_1"> He sent me -500 Cash (Kaushal)</span><br> 
+
+<h5> Rohit Sharma : 700 To Collect</h5>
+<h5> To give Prajwal Panth: 1000 </h5>
+
+<span class="note"> Dilip sent +200 To Ritesh + Sushant 500 Rs bet</span><br> 
+
+</div>
+          <p class="neon-text">Remarks : Home KIMS CONVERT  </p>
+
+
+<div class="event-summary">
+  <h2>Summary</h2>
+<span>-> Aman Sent 900 to Ritesh  </span><br>
+<span>-> Aman Sent IC 2500 (Check Gpay) </span><br>
+<span>-> Aman Deduct Ritesh Old Slice 1250 (Aman Hisab) </span><br>
+</div>
+
+        </div>
+        </div>
+ <!--  ------------------------------------------------Flex Card 3 --------------------------------------------------------------------- -->
+  <div class="card">
+           <div class="special_container">
+ 
+<div class="custom">
+        <h2><img src="esewa_logo.png" alt="Description of image" height="100" width="150" style="float: left;"  class="logo-img"> PrabhuBank Details!</h2>
+
+            <div class="note">
+                <i class="fas fa-info-circle"></i> Money was sent from Prabhu Bank to Ritesh's Esewa account
+            </div>
+
+        <h2>Ritesh Kumar Chauhan</h2>  
+        <h5>E-Sewa Number : 9818837216 || 9818837215</h5>
+  <div class="summary">
+    <img src="friends/Ritesh.png" alt="Ritesh">
+
+    <div class="summary-text">
+      <strong>Ritesh</strong> still owes  <span  class="old_amount">NC 62,200 </span> to Prashanna Shrestha.
+      <br>
+       <div class="note_1">38,200 Prabhu Bank to Ritesh Esewa (Online)</div>
+
+       <div class="note_1">9,000 (Cyclone Cash PiggyBank Home)</div>
+        <div class="note_1">15,000 (Abc Trip Cash PiggyBank Home)</div>
+
+  <div class="note">Note: Screenshots are attached below and cash taken twice with tweezer's from piggybank during Cyclone and ABC trip.</div>
+
+    </div>
+  </div>
+
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>Amount Recovered: Rs. 0</span>
+                    <span>Total: Rs. 62,200</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+
+
+<!-- April 2024 -->
+            <h3 class="statement-month">APRIL 2024</h3>
+            <div class="statement-gallery">
+                <div class="statement-item">
+                    <img src="esewa_statements/1. APR 4.png" alt="April 4 Statement">
+                </div>
+
+
+   <div class="remarks">Remarks : Sent to Abhinav Aman (Aman Loan Ritesh) </div>
+
+
+            </div>
+
+            <!-- June 2024 -->
+            <h3 class="statement-month">JUNE 2024</h3>
+            <div class="statement-gallery">
+                <div class="statement-item">
+                    <img src="esewa_statements/2. JUNE 5.png" alt="June 5 Statement">
+                </div>
+   <div class="remarks">Remarks : Sent to Rajesh Kumar Bose (Townhall Hotel)	 </div>
+
+                <div class="statement-item">
+                    <img src="esewa_statements/3. JUNE 29.png" alt="June 29 Statement">
+                </div>
+   <div class="remarks">Remarks : Paid to NEW GANESH HOTEL</div>
+
+            </div>
+
+            <!-- July 2024 -->
+            <h3 class="statement-month">JULY 2024</h3>
+            <div class="statement-gallery">
+                <div class="statement-item">
+                    <img src="esewa_statements/4. JULY 2.png" alt="July 2 Statement">
+                </div>
+   <div class="remarks">Remarks : Sent to Rajesh Kumar Bose (Townhall Hotel) </div>
+
+                <div class="statement-item">
+                    <img src="esewa_statements/5. JULY 8.png" alt="July 8 Statement">
+                </div>
+   <div class="remarks">Remarks : Money transferred to NIC ASIA BANK LTD.</div>
+
+                <div class="statement-item">
+                    <img src="esewa_statements/6. JULY 8_.png" alt="July 8 Additional Statement">
+                </div>
+   <div class="remarks">Remarks : Fund Transferred to Abhishek Kumar Sarraf	 </div>
+
+            </div>
+
+            <!-- August 2024 -->
+            <h3 class="statement-month">AUGUST 2024</h3>
+            <div class="statement-gallery">
+                <div class="statement-item">
+                    <img src="esewa_statements/7. AUG 15.png" alt="August 15 Statement">
+                </div>
+   <div class="remarks">Remarks : Fund Transferred to Abhinav Aman (Aman Loan Ritesh)	 </div>
+
+                <div class="statement-item">
+                    <img src="esewa_statements/8. AUG 25.png" alt="August 25 Statement">
+                </div>
+                <div class="statement-item">
+                    <img src="esewa_statements/9. AUG 25_.png" alt="August 25 Additional Statement">
+                </div>
+   <div class="remarks">Remarks : Fund Transferred to KHUSBU COMMUNICATION (STAKE) 3200	 </div>
+
+            </div>
+
+            <!-- October 2024 -->
+            <h3 class="statement-month">OCTOBER 2024</h3>
+            <div class="statement-gallery">
+                <div class="statement-item">
+                    <img src="OCT 17.jpg" alt="October 17 Statement">
+                </div>
+                <div class="statement-item">
+                    <img src="OCT 18.jpg" alt="October 18 Statement">
+                </div>
+   <div class="remarks">Remarks : 9818837216 Statements Not Available
+ </div>
+
+
+            <h3 class="statement-month">CYCLONE HOLIDAY (23 Oct - 5 Nov)</h3>
+                <div class="statement-item">
+                    <img src="OCT 29.jpg" alt="October 29 Statement">
+                </div>
+   <div class="remarks">Remarks : Fund Transferred to Bibek Kumar Yadav	 </div>
+
+
+                <div class="statement-item">
+                    <img src="OCT 29_1.jpg" alt="October 29 Additional Statement">
+                </div>
+   <div class="remarks">Remarks : Paid for HOTEL EVERES</div>
+        <h2>Oct 30 (Night Home) -> Piggybank : 9,000 NC CASH </h2>
+
+            </div>
+
+      <span class="old_amount">Total : Rs.38,200 NC</span>
+        <h2> DECEMBER 2024</h2>
+          <h2> DEC 20 (Night Home) -> ABC TRIP : 15,000 NC CASH</h2>
+      <br> <br> <br>
+
+<a href="1.esewa_9818837215.zip" download>
+  <button class="download-btn">Download Esewa Statements (9818837215)</button>
+</a>                              <br>
+<a href="2.prabhu_statements_2023.zip" download>
+  <button class="download-btn">Download Prabhu Statements (2023)</button>
+</a>                              <br>
+<a href="3.prabhu_statements_2024.zip" download>
+  <button class="download-btn">Download Prabhu Statements (2024)</button>
+</a>
+
+ </div>
+ </div>
+
+</div>
+ <!--  ------------------------------------------------Flex Card 4 --------------------------------------------------------------------- -->
+
+        <div class="card">
+           <div class="container">
+
+                 <h1>Esewa History of Ritesh </h1>
+                
+
+                 <h1>9818837215 and 9818837216 2024</h1>
+
+<div class="event-summary">
+  <h2>Summary</h2>
+  <p class="event-text">
+Nigger
+  </p>
+</div>
+
+    <h2>📅 April 2024</h2>
+    <table class="custom-table">
+      <tr><th>Date</th><th>Time</th><th>Details</th><th>Amount</th></tr>
+      <tr><td class="red_text">Apr 4</td><td>02:23:39</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹5,600</td></tr>
+      <tr><td>Apr 4</td><td>05:07:26</td><td>Received from NMB BANK LTD</td><td>₹600</td></tr>
+      <tr><td>Apr 5</td><td>02:02:20</td><td>Sent to Abhinav Aman (Aman Loan Ritesh)</td><td>-₹6,000</td></tr>
+      <tr><td colspan="4" class="final">Final Balance (April): ₹200.00</td></tr>
+
+    </table>
+
+    <h2>📅 June 2024</h2>
+    <table class="custom-table">
+      <tr><th>Date</th><th>Time</th><th>Details</th><th>Amount</th></tr>
+      <tr><td class="red_text">Jun 5</td><td>01:34:41</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹1,000</td></tr>
+      <tr><td>Jun 5</td><td>01:35:18</td><td>Received from GLOBAL IME BANK LTD</td><td>₹1,000</td></tr>
+      <tr><td>Jun 5</td><td>01:43:31</td><td>Paid for Ncell Pack</td><td>-₹60</td></tr>
+      <tr><td>Jun 5</td><td>01:49:38</td><td>Sent to Rajesh Kumar Bose (Townhall Hotel)</td><td>-₹1,500</td></tr>
+
+      <tr><td class="red_text">Jun 29</td><td>15:53:31</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹4,000</td></tr>
+      <tr><td>Jun 29</td><td>16:08:23</td><td>Paid to NEW GANESH HOTEL</td><td>-₹3,500</td></tr>
+      <tr><td>Jun 29</td><td>18:00:28</td><td>Sent to Bibek Chauhan</td><td>-₹200</td></tr>
+      <tr><td>Jun 29</td><td>18:55:47</td><td>Bank transfer charges</td><td>-₹10</td></tr>
+      <tr><td>Jun 29</td><td>21:11:35</td><td>Sent to Pawan Kumar Mahato</td><td>-₹200</td></tr>
+      <tr><td>Jun 29</td><td>21:19:16</td><td>Ncell top-up</td><td>-₹100</td></tr>
+    </table>
+
+    <h2>📅 July 2024 </h2>
+    <table class="custom-table">
+      <tr><th>Date</th><th>Time</th><th>Details</th><th>Amount</th></tr>
+      <tr><td class="red_text">Jul 2</td><td>00:38:03</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹3,000</td></tr>
+      <tr><td>Jul 2</td><td>00:39:11</td><td>Sent to Rajesh Kumar Bose (Townhall Hotel)</td><td>-₹3,000</td></tr>
+
+      <tr><td class="red_text">Jul 8</td><td>22:41:43</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹4,000</td></tr>
+      <tr><td class="red_text">Jul 8</td><td>22:53:34</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹1,000</td></tr>
+
+      <tr><td>Jul 8</td><td>23:04:59</td><td>Money transferred to NIC ASIA BANK LTD.</td><td>-₹4,000</td></tr>
+      <tr><td>Jul 9</td><td>05:03:22</td><td>Fund Transferred to Abhishek Kumar Sarraf</td><td>-₹1000</td></tr>
+    </table>
+
+    <h2>📅 Aug 2024 </h2>
+    <table class="custom-table">
+      <tr><th>Date</th><th>Time</th><th>Details</th><th>Amount</th></tr>
+      <tr><td class="red_text">Aug 15</td><td>20:17:08</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹1,600</td></tr>
+      <tr><td>Aug 15</td><td>21:01:37</td><td>Fund Transferred to Abhinav Aman (Aman Loan Ritesh)</td><td>-₹1,600</td></tr>
+
+      <tr><td class="red_text">Aug 25</td><td>15:16:03</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹1,600</td></tr>
+
+      <tr><td class="red_text">Aug 25</td><td>15:17:52</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹1,600</td></tr>
+
+      <tr><td>Aug 25</td><td>21:52:26</td><td>Fund Transferred to KHUSBU COMMUNICATION (STAKE)</td><td>-₹3,200</td></tr>
+
+    </table>
+
+    <h2>📅 Oct 2024 </h2>
+    <table class="custom-table">
+      <tr><th>Date</th><th>Time</th><th>Details</th><th>Amount</th></tr>
+      <tr><td class="red_text">Oct 17</td><td>?</td><td class="red_text">?(9818837216)</td><td class="red_text">₹4,000</td></tr>
+      <tr><td class="red_text">Oct 18</td><td>?</td><td class="red_text">?(9818837216)</td><td class="red_text">₹5,800</td></tr>
+      <tr><td colspan="4" class="final"> 9818837216 Statements Not Available</td></tr>
+
+      <tr><td class="red_text">Oct 29</td><td>23:08:44</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹3,000</td></tr>
+
+      <tr><td class="red_text">Oct 29</td><td>23:25:34</td><td class="red_text">Received from PRABHU BANK LTD</td><td class="red_text">₹2,000</td></tr>
+
+      <tr><td>Oct 29</td><td>23:28:28</td><td>Fund Transferred to Bibek Kumar Yadav</td><td>-₹3,035</td></tr>
+      <tr><td>Oct 30</td><td>00:50:03</td><td>Paid for HOTEL EVEREST</td><td>-₹2,000</td></tr>
+      <tr><td colspan="4" class="final"> Oct 30 (Night Home) -> Piggybank : 9,000 NC CASH </td></tr>
+
+
+    </table>
+    <h2>📅 Dec 2024 </h2>
+    <table class="custom-table">
+          <tr><td colspan="4" class="final"> DEC 20 (Night Home) -> ABC TRIP : 15,000 NC CASH</td></tr>
+
+    </table>
+
+
+</div>
+</div>
+ <!--  ------------------------------------------------Flex Card 5 --------------------------------------------------------------------- -->
+
+        <div class="card">
+           <div class="special_container">
+ 
+<div class="custom">
+
+
+  <h2>Coinswitch History of Prashanna</h2>
+
+ 
+  <div class="note">Note: All withdrawals were made to Airtel Payments Bank of Prashanna (7978998558)</div>
+
+
+  <div class="summary">
+    <img src="friends/Ritesh.png" alt="Ritesh">
+
+    <div class="summary-text">
+      <strong>Ritesh</strong> still owes  <span  class="old_amount">INR 3,10,056</span> to Prashanna Shrestha.
+  <div class="note">Note: This is just Coinswitch Loans. 2nd Semester Fee + 3rd Semester Fee</div>
+
+    </div>
+  </div>
+
+<div class="event-summary">
+  <h2>Summary</h2>
+  <p class="event-text">
+Nigger
+  </p>
+</div>
+
+
+  <div class="timeline" id="historyContainer"></div>
+  <div class="note">Note: Nothing is edited .For proof Login Coinswitch Account (7978998558) OTP ps5470950@gmail.com PIN : 2580</div>
+
+<a href="Coinswitch.jpg" download>
+  <button class="download-btn">Download Coinswitch Transaction</button>
+</a>    
+
+<br>
+
+<a href="Airtelpaymentbank.pdf" download>
+  <button class="download-btn">Download Airtel Payment Bank Transaction</button>
+</a>          
+<br>
+
+<a href="CryptoChat.zip" download>
+  <button class="download-btn">Download Chats</button>
+</a>    
+</div>
+</div>
+</div>
+
+
+
+<!-- ----------------------------------------------Pop Up--------------------------------------------------------------------------------- -->
+    <!-- Popup -->
+    <div class="popup">
+        <img id="popup-image" src="" alt="Person Image">
+        <h3 id="popup-name"></h3>
+        <p><strong>Amount:</strong> <span id="popup-amount"></span></p>
+        <p><strong>Date:</strong> <span id="popup-date"></span></p>
+        <p><strong>Notes:</strong> <span id="popup-notes"></span></p>
+        <p><strong>Piggybank:</strong> <span id="popup-cash"></span></p>
+        <p><strong>Extra:</strong> <span id="popup-extra"></span></p>
+
+        <button id="close-popup">Close</button>
+    </div>
+
+<!-- -----------------------------------------Java Script ----------------------------------------------------------------   -->
+
+   <script>
+        // Search functionality
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const listItems = document.querySelectorAll('li');
+
+            listItems.forEach(item => {
+                const name = item.querySelector('span').textContent.toLowerCase();
+                if (name.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+
+
+        // Last updated timestamp
+        const lastUpdated = document.getElementById('last-updated');
+        const date = new Date();
+        lastUpdated.textContent = `Last updated: ${date.toLocaleString()}`;
+
+        // Calculate total sum
+        function calculateTotalSum() {
+            const amounts = document.querySelectorAll('.red_boxtext');
+            let total = 0;
+            amounts.forEach(amount => {
+                const value = parseFloat(amount.textContent.replace(/[^0-9.]/g, ''));
+                if (amount.textContent.includes('Lakh')) {
+                    total += value * 100000; // Convert lakh to rupees
+                } else if (amount.textContent.includes('Thousand')) {
+                    total += value * 1000; // Convert thousand to rupees
+                } else {
+                    total += value; // Assume it's already in rupees
+                }
+            });
+            document.getElementById('total-sum').textContent = `Total Amount Owed: ₹${total.toLocaleString()}`;
+        }
+
+        calculateTotalSum(); // Initial calculation
+
+        // Popup functionality
+        const popup = document.querySelector('.popup');
+        const popupImage = document.getElementById('popup-image');
+        const popupName = document.getElementById('popup-name');
+        const popupAmount = document.getElementById('popup-amount');
+        const popupDate = document.getElementById('popup-date');
+        const popupNotes = document.getElementById('popup-notes');
+        const popupCash = document.getElementById('popup-cash');
+        const popupExtra = document.getElementById('popup-extra');
+
+        const closePopup = document.getElementById('close-popup');
+
+        document.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', () => {
+                const image = item.getAttribute('data-image');
+                const name = item.getAttribute('data-details');
+                const amount = item.getAttribute('data-amount');
+                const date = item.getAttribute('data-date');
+                const notes = item.getAttribute('data-notes');
+                const cash = item.getAttribute('data-cash');
+                const extra = item.getAttribute('data-extra');
+
+
+                popupImage.src = image;
+                popupName.textContent = name;
+                popupAmount.textContent = amount;
+                popupDate.textContent = date;
+                popupNotes.textContent = notes;
+                popupCash.textContent = cash;
+                popupExtra.textContent = extra;
+                popup.classList.add('active');
+            });
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+
+        // Close popup when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('li') && !event.target.closest('.popup')) {
+                popup.classList.remove('active');
+            }
+        });
+
+
+// Function to highlight specific text in red
+function highlightCashText() {
+    const listItem = document.querySelector('li[data-details="Ritesh Kumar Chauhan"]'); // Select the specific <li>
+    let cashText = listItem.getAttribute('data-cash'); // Get the value of data-cash
+    let cashExtra = listItem.getAttribute('data-extra'); // Get the value of data-cash
+
+    // Wrap "9,000 Nc Cash" and "14,000 Nc Cash" in <span> tags with the red-text class
+    cashText = cashText.replace(/9,000 Nc Cash/g, '<span class="red_text">9,000 Nc Cash</span>');
+    cashText = cashText.replace(/14,000 Nc Cash/g, '<span class="red_text">14,000 Nc Cash</span>');
+    cashExtra = cashExtra.replace(/1230 INR/g, '<span class="red_text">1230 INR</span>');
+    cashExtra = cashExtra.replace(/800 INR/g, '<span class="red_text">800 INR</span>');
+    cashExtra = cashExtra.replace(/1000 INR/g, '<span class="red_text">1000 INR</span>');
+    cashExtra = cashExtra.replace(/4000 INR/g, '<span class="red_text">4000 INR</span>');
+    cashExtra = cashExtra.replace(/6510 INR/g, '<span class="red_text">6510 INR</span>');
+
+    // Update the data-cash attribute with the new HTML
+    listItem.setAttribute('data-cash', cashText);
+    listItem.setAttribute('data-extra', cashExtra);
+
+    // If you want to display the formatted text in the popup, update the popup logic
+    listItem.addEventListener('click', () => {
+        const cash = listItem.getAttribute('data-cash');
+        const extra = listItem.getAttribute('data-extra');
+
+        document.getElementById('popup-cash').innerHTML = cash; // Use innerHTML to render the HTML
+        document.getElementById('popup-extra').innerHTML = extra	; // Use innerHTML to render the HTML
+
+    });
+}
+
+// Call the function to highlight the text
+highlightCashText();
+
+        // Function to update the elapsed time
+        function updateElapsedTime() {
+            const countdownElements = document.querySelectorAll('.countdown');
+            const now = new Date().getTime();
+
+            countdownElements.forEach((element, index) => {
+                const parentLi = element.closest('li');
+                const startDate = new Date(parentLi.getAttribute('data-date')).getTime();
+                const timeElapsed = now - startDate;
+
+                if (timeElapsed > 0) {
+                    const days = Math.floor(timeElapsed / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeElapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
+
+                    element.querySelector('#days' + (index + 1)).textContent = days;
+                    element.querySelector('#hours' + (index + 1)).textContent = hours;
+                    element.querySelector('#minutes' + (index + 1)).textContent = minutes;
+                    element.querySelector('#seconds' + (index + 1)).textContent = seconds;
+                } else {
+                    element.innerHTML = "<div>Timer not started!</div>";
+                }
+            });
+        }
+
+        // Update elapsed time every second
+        setInterval(updateElapsedTime, 1000);
+        updateElapsedTime(); // Initial call
+
+/* ----------------------------------- CoinswitchHistory  Script ------------------------------------------------ */
+    const data = [
+      ["23 Feb 24, 09:41 PM", "UPI Deposit", "₹62,500", "3rd Semester Fee Prashanna"],
+      ["23 Feb 24, 09:52 PM", "UPI Deposit", "₹27,000", "3rd Semester Fee Prashanna"],
+      ["25 Feb 24, 03:30 AM", "UPI Deposit", "₹53,000", "3rd Semester Fee Prashanna"],
+      ["27 Feb 24, 06:20 PM", "Withdrawal", "₹1,000", "Prashanna Food"],
+      ["04 Mar 24, 07:42 PM", "Withdrawal", "₹20,000", "Pankaj Loan PENDING"],
+      ["04 Mar 24, 11:57 PM", "Withdrawal", "₹2,000", "Sujit Loan Paid "],
+      ["07 Mar 24, 02:41 PM", "Withdrawal", "₹500", "Prashanna Food"],
+      ["14 Mar 24, 11:26 PM", "Withdrawal", "₹10,000", "Withdraw by Ritesh"],
+      ["16 Mar 24, 02:52 AM", "Withdrawal", "₹10,000", "Withdraw by Ritesh"],
+      ["17 Mar 24, 08:14 PM", "Withdrawal", "₹77,195", "Withdraw by Ritesh"],
+      ["19 Mar 24, 02:23 PM", "UPI Deposit", "₹48,000", "Deposit by Ritesh"],
+      ["23 Mar 24, 02:31 PM", "UPI Deposit", "₹9,000", "Shiv Gave me Loan of 9k"],
+      ["23 Mar 24, 02:33 PM", "UPI Deposit", "₹11,000", "Shiv Gave me Loan of 11k "],
+      ["23 Mar 24, 06:31 PM", "UPI Deposit", "₹15,000", "15k Came from somwhere"],
+      ["26 Mar 24, 11:54 PM", "UPI Deposit", "₹100", "Test transaction"],
+      ["26 Mar 24, 07:41 PM", "Withdrawal", "₹500", "Prashanna Food"],
+      ["29 Mar 24, 02:06 AM", "Withdrawal", "₹5,000", "15k Gone part 1"],
+      ["29 Mar 24, 10:46 PM", "Withdrawal", "₹10,000", "15k Gone part 2"],
+      ["30 Mar 24, 02:23 AM", "Withdrawal", "₹9,000", "Withdraw by Ritesh . (Shiv 9k gave to ritesh STAKE) "],
+      ["30 Mar 24, 09:05 PM", "Withdrawal", "₹500", "Prashanna Food"],
+      ["30 Mar 24, 09:30 PM", "Withdrawal", "₹9,991", "Withdraw 10k by be"],
+      ["02 Apr 24, 04:14 PM", "UPI Deposit", "₹11,000", "Added 1k from GPAY CRICKET GAME and 11k DEPOSITED"],
+      ["02 Apr 24, 09:06 PM", "Withdrawal", "₹500", "Prashanna Food"],
+      ["02 Apr 24, 10:02 PM", "Withdrawal", "₹11,000", "Withdraw by Ritesh . (Shiv 11k gave to ritesh STAKE)"],
+      ["28 Apr 24, 09:42 AM", "Withdrawal", "₹2,500", "Gave Astik Shah (He gave me Cash)"],
+      ["28 Apr 24, 10:17 AM", "Withdrawal", "₹500", "Gave to Astik Shah (He gave me Cash)"],
+      ["29 Apr 24, 07:41 AM", "Withdrawal", "₹5,000", "Ritesh Train Stake "],
+      ["29 Apr 24, 10:22 AM", "UPI Deposit", "₹500", "Astik Cash Deposited"],
+      ["29 Apr 24, 12:06 PM", "UPI Deposit", "₹2,000", "Astik Cash Deposited"],
+      ["29 Apr 24, 05:03 PM", "Withdrawal", "₹11,000", "Ritesh Train Stake"],
+      ["30 Apr 24, 02:33 AM", "Withdrawal", "₹10,000", "Ritesh Stake Train NO PERMISSION"],
+      ["09 May 24, 07:43 PM", "Withdrawal", "₹29,296", "Ritesh Stake BIRGUNJ , NO PERMISSION"],
+      ["11 May 24, 12:36 PM", "Withdrawal", "₹57,983", "HOME : 20,000 IC CASH + 50,000 NC CASH , Ritesh took : 6733"],
+      ["18 May 24, 11:26 AM", "Withdrawal", "₹20,000", "Ritesh NC CONVERT . Gave me 30,000 NC"],
+      ["21 May 24, 11:54 AM", "Withdrawal", "₹20,000", "Ritesh Withdraw "],
+      ["22 May 24, 05:15 PM", "Withdrawal", "₹34,000", "Ritesh Withdraw"],
+      ["22 May 24, 05:54 PM", "Withdrawal", "₹925", "Ritesh Withdraw, He gave me just 25,000 IC "],
+      ["23 May 24, 04:48 PM", "Withdrawal", "₹30,000", "Ritesh , NO PERMISSION"],
+      ["24 May 24, 06:12 PM", "Withdrawal", "₹32,000", "Ritesh , Attached Screenshots. Told his DAD needed money."],
+      ["26 May 24, 10:40 PM", "Withdrawal", "₹15,000", "Ritesh , NO PERMISSION"],
+      ["29 May 24, 02:43 PM", "Withdrawal", "₹8,000", "Withdraw by Ritesh"],
+      ["30 May 24, 08:02 AM", "Withdrawal", "₹15,000", "Withdraw by Ritesh"],
+      ["10 Jun 24, 09:02 PM", "Withdrawal", "₹5,000", "ritesh sold my crypto NO PERMISSION"],
+      ["14 Jun 24, 08:19 PM", "Withdrawal", "₹3,761", "ritesh sold my crypto NO PERMISSION"],
+      ["14 Jun 24, 10:21 PM", "Withdrawal", "₹5,231", "ritesh sold my crypto NO PERMISSION"],
+      ["16 Jun 24, 03:55 PM", "Withdrawal", "₹5,980", "ritesh sold my crypto NO PERMISSION"],
+      ["16 Jun 24, 04:13 PM", "Withdrawal", "₹10,822", "ritesh sold my crypto NO PERMISSION"],
+      ["16 Jun 24, 04:50 PM", "Withdrawal", "₹10,863", "ritesh sold my crypto NO PERMISSION"]
+    ];
+
+    const container = document.getElementById("historyContainer");
+    let totalDeposited = 0, totalWithdrawn = 0;
+
+    data.forEach(([datetime, type, amountStr, remark]) => {
+      const amount = parseFloat(amountStr.replace(/[₹,]/g, ""));
+      const isDeposit = type.includes("Deposit");
+
+      if (isDeposit) totalDeposited += amount;
+      else totalWithdrawn += amount;
+
+      const card = document.createElement("div");
+      const cardClass = isDeposit ? "deposit" : "withdrawal";
+      const icon = isDeposit ? "💰" : "💸";
+      const highlight = remark.toLowerCase().includes("ritesh") ? "highlight-ritesh" : "";
+
+      card.className = `transaction-card ${cardClass} ${highlight}`;
+      card.innerHTML = `
+        <div class="top-row">
+          <div>
+            <div class="type">${icon} ${type}</div>
+            <div class="status completed">Completed</div>
+          </div>
+          <div>
+            <div class="amount">${amountStr}</div>
+            <div class="datetime">${datetime}</div>
+          </div>
+        </div>
+        <div class="remarks">${remark}</div>
+      `;
+      container.appendChild(card);
+    });
+
+    const format = n => `₹${n.toLocaleString("en-IN")}`;
+    document.getElementById("totalDeposited").textContent = format(totalDeposited);
+    document.getElementById("totalWithdrawn").textContent = format(totalWithdrawn);
+    document.getElementById("balance").textContent = format(totalDeposited - totalWithdrawn);   
+
+    </script>
+
+<!-- -----------------------------------------Java Script ----------------------------------------------------------------   -->
+</body>
+</html>
